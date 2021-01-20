@@ -6,6 +6,7 @@ namespace SauceDemo_WebTest
     {
         public IWebDriver SeleniumDriver { get; internal set; }
         public SDCartPage SD_Cartpage { get; internal set; }
+        public SDProductPage SD_Productpage {​​​​ get; internal set; }​​​​
 
         public SDWebsite(string driverName, int pageLoadWaitInSecs=10, int ImplicitWaitInSecs=10)
         {
