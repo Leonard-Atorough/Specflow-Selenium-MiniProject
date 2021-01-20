@@ -8,6 +8,7 @@ namespace SauceDemo_WebTest
         private string ProductPageURL = AppConfigReader.ProductPageUrl;
         private IWebElement _sortContainer => _seleniumDriver.FindElement(By.ClassName("product_sort_container"));
 
+
         public SDProduct(IWebDriver seleniumDriver)
         {
             _seleniumDriver = seleniumDriver;
@@ -16,6 +17,11 @@ namespace SauceDemo_WebTest
         public void VisitProductPage()
         {
             _seleniumDriver.Navigate().GoToUrl(ProductPageURL);
+        }
+
+        public void AddItemToCart()
+        {
+
         }
     }
 }
