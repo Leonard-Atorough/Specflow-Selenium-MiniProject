@@ -2,13 +2,14 @@
 
 namespace SauceDemo_WebTest
 {
-    public class SDProduct
+    public class SDProductPage
     {
         private IWebDriver _seleniumDriver;
         private string ProductPageURL = AppConfigReader.ProductPageUrl;
         private IWebElement _sortContainer => _seleniumDriver.FindElement(By.ClassName("product_sort_container"));
+        private IWebElement _firstItem => _seleniumDriver.FindElement(By.XPath(@""));
 
-        public SDProduct(IWebDriver seleniumDriver)
+        public SDProductPage(IWebDriver seleniumDriver)
         {
             _seleniumDriver = seleniumDriver;
         }
@@ -16,6 +17,16 @@ namespace SauceDemo_WebTest
         public void VisitProductPage()
         {
             _seleniumDriver.Navigate().GoToUrl(ProductPageURL);
+        }
+
+        public void SortByNameAZ()
+        {
+            _sortContainer.SendKeys("Name (A to Z)");
+        }
+
+        public string GetFirstItem()
+        {
+            return _firstItem.Text;
         }
     }
 }
