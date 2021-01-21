@@ -1,27 +1,30 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using NUnit.Framework;
 
-namespace SauceDemo_WebTest.BDD
+namespace SauceDemo_WebTest
 {
     [Binding]
     public class SDProductSteps
     {
+        public SDWebsite SD_Website { get; } = new SDWebsite("chrome");
+
         [Given(@"I am on the product page")]
         public void GivenIAmOnTheProductPage()
         {
-            ScenarioContext.Current.Pending();
+            SD_Website.SD_Productpage.VisitProductPage();
         }
         
         [When(@"I select sort by name A-Z")]
         public void WhenISelectSortByNameA_Z()
         {
-            ScenarioContext.Current.Pending();
+            SD_Website.SD_Productpage.SortByNameAZ();
         }
         
         [Then(@"the products are listed alphabetically")]
         public void ThenTheProductsAreListedAlphabetically()
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(SD_Website.SD_Productpage.GetFirstItem(), Is.EqualTo("Sauce Labs Backpack"));
         }
     }
 }
