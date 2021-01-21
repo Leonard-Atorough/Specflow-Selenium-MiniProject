@@ -16,5 +16,5 @@ Scenario: : Add multiple items to cart
 	Then the cart counter should display the correct <number> of items
 	Examples: 
 	| number |
-	| 3      |
-	| 5      |
+	| 2      |
+	| 1      |
