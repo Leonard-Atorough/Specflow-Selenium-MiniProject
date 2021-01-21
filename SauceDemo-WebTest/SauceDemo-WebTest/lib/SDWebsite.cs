@@ -6,12 +6,14 @@ namespace SauceDemo_WebTest
     {
         public IWebDriver SeleniumDriver { get; internal set; }
         public SDCartPage SD_Cartpage { get; internal set; }
+        public SDSignInPage SD_SignInPage { get; internal set; }
 
         public SDWebsite(string driverName, int pageLoadWaitInSecs=10, int ImplicitWaitInSecs=10)
         {
             SeleniumDriver = new SeleniumDriverConfig(driverName, pageLoadWaitInSecs, ImplicitWaitInSecs).Driver;
 
             SD_Cartpage = new SDCartPage(SeleniumDriver);
+            SD_SignInPage = new SDSignInPage(SeleniumDriver);
         }
 
         public void DeleteCookies()
