@@ -9,7 +9,7 @@ namespace SauceDemo_WebTest
         public SDProductPage SD_Productpage { get; internal set; }
         public SDSignInPage SD_SignInPage { get; internal set; }
 
-        public SDWebsite(string driverName, int pageLoadWaitInSecs=10, int ImplicitWaitInSecs=10)
+        public SDWebsite(string driverName, int pageLoadWaitInSecs=15, int ImplicitWaitInSecs=15)
         {
             SeleniumDriver = new SeleniumDriverConfig(driverName, pageLoadWaitInSecs, ImplicitWaitInSecs).Driver;
 
