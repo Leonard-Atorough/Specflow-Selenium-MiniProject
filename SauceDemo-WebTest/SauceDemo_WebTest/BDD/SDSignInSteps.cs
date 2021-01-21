@@ -60,7 +60,13 @@ namespace SauceDemo_WebTest.BDD
         [Then(@"I should get the error message should disappear")]
         public void ThenIShouldGetTheErrorMessageShouldDisappear()
         {
-            Assert.That(SDWebsite.SD_SignInPage.GetError(), Is.Empty);
+            Assert.That(SDWebsite.SD_SignInPage.GetFormText(), Does.Not.Contain("Username and password do not match any user in this service"));
+        }
+
+        [AfterScenario]
+        public void CleanUp()
+        {
+            SDWebsite.CloseBrowser();
         }
     }
 }
