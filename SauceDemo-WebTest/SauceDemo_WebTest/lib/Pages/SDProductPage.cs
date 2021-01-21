@@ -9,6 +9,11 @@ namespace SauceDemo_WebTest
         private string ProductPageURL = AppConfigReader.ProductPageUrl;
         private IWebElement _sortContainer => _seleniumDriver.FindElement(By.ClassName("product_sort_container"));
         private IWebElement _firstItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[1]/div[2]/a"));
+        private IWebElement _secondItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[2]/div[2]/a"));
+        private IWebElement _thirdItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[3]/div[2]/a"));
+        private IWebElement _fourthItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[4]/div[2]/a"));
+        private IWebElement _fifthItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[5]/div[2]/a"));
+        private IWebElement _sixthItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[6]/div[2]/a"));
 
         private IWebElement _cartIcon => _seleniumDriver.FindElement(By.ClassName("shopping_cart_link"));
 
@@ -26,14 +31,39 @@ namespace SauceDemo_WebTest
             _seleniumDriver.Navigate().GoToUrl(ProductPageURL);
         }
 
-        public void SortByNameAZ()
+        public void SortBy(string sortByMethod)
         {
-            _sortContainer.SendKeys("Name (A to Z)");
+            _sortContainer.SendKeys(sortByMethod);
         }
 
         public string GetFirstItem()
         {
             return _firstItem.Text;
+        }
+
+        public string GetSecondItem()
+        {
+            return _secondItem.Text;
+        }
+
+        public string GetThirdItem()
+        {
+            return _thirdItem.Text;
+        }
+
+        public string GetFourthItem()
+        {
+            return _fourthItem.Text;
+        }
+
+        public string GetFifthItem()
+        {
+            return _fifthItem.Text;
+        }
+
+        public string GetSixthItem()
+        {
+            return _sixthItem.Text;
         }
 
         public string GetAnyFirstItem() => _AnyFirstItem[0].Text;
