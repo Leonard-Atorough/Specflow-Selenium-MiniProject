@@ -10,7 +10,7 @@ Scenario: Add item to cart
 	When I click on the cart Icon to go to my cart
 	Then the first item should be in my cart
 
-Scenario: : Add multiple items to cart
+Scenario: Add multiple items to cart
 	Given I am on the products page
 	When I add multiple <number> of Items to my cart
 	Then the cart counter should display the correct <number> of items
@@ -19,3 +19,14 @@ Scenario: : Add multiple items to cart
 	| 6      |
 	| 4      |
 
+Scenario: Remove items from cart
+	Given I am on the products page
+	And I add the first item to my cart
+	And I click on the cart icon
+	When I remove the first item from my cart
+	Then the first item should be removed from my cart
+
+Scenario: User clicks continue shopping
+	Given I am on the cart page
+	When I click the continue shopping button
+	Then I should land on the product page

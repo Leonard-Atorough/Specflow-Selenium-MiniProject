@@ -20,7 +20,20 @@ namespace SauceDemo_WebTest.BDD
         {
             SD_Website.SD_Productpage.AddItemToCart();
         }
-        
+
+        [Given(@"I click on the cart icon")]
+        public void GivenIClickOnTheCartIcon()
+        {
+            SD_Website.SD_Productpage.ClickCartIcon();
+        }
+
+        [Given(@"I am on the cart page")]
+        public void GivenIAmOnTheCartPage()
+        {
+            SD_Website.SD_Cartpage.GoToCart();
+        }
+
+
         [When(@"I click on the cart Icon to go to my cart")]
         public void WhenIClickOnTheCartIconToGoToMyCart()
         {
@@ -32,7 +45,20 @@ namespace SauceDemo_WebTest.BDD
         {
             SD_Website.SD_Productpage.AddItemToCart(Int32.Parse(items));
         }
-        
+
+        [When(@"I remove the first item from my cart")]
+        public void WhenIRemoveTheFirstItemFromMyCart()
+        {
+            SD_Website.SD_Cartpage.RemoveClick();
+        }
+
+        [When(@"I click the continue shopping button")]
+        public void WhenIClickTheContinueShoppingButton()
+        {
+            SD_Website.SD_Cartpage.ContinueShoppingClick();
+        }
+
+
         [Then(@"the first item should be in my cart")]
         public void ThenTheFirstItemShouldBeInMyCart()
         {
@@ -43,6 +69,18 @@ namespace SauceDemo_WebTest.BDD
         public void ThenTheCartCounterShouldDisplayTheCorrectOfItems(string expected)
         {
             Assert.That(SD_Website.SD_Cartpage.GetBasketCount(), Is.EqualTo(Int32.Parse(expected)));
+        }
+
+        [Then(@"the first item should be removed from my cart")]
+        public void ThenTheFirstItemShouldBeRemovedFromMyCart()
+        {
+            Assert.That(SD_Website.SD_Cartpage.CartPageItemCount(), Is.EqualTo(0));
+        }
+
+        [Then(@"I should land on the product page")]
+        public void ThenIShouldLandOnTheProductPage()
+        {
+            Assert.That(SD_Website.SD_Cartpage.GetPageLabel(), Does.Contain("Products"));
         }
 
 
