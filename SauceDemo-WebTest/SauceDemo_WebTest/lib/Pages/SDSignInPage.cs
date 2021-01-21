@@ -14,6 +14,7 @@ namespace SauceDemo_WebTest
         private IWebElement _loginButton => _seleniumDriver.FindElement(By.Id("login-button"));
         private IWebElement _errorButton => _seleniumDriver.FindElement(By.ClassName("error-button"));
         private IWebElement _errorMessage => _seleniumDriver.FindElement(By.TagName("h3"));
+        private IWebElement _formElement => _seleniumDriver.FindElement(By.TagName("form"));
 
         public SDSignInPage(IWebDriver seleniumDriver)
         {
@@ -43,6 +44,11 @@ namespace SauceDemo_WebTest
 
         public string GetError() {
             return _errorMessage.Text;
+        }
+
+        public string GetFormText()
+        {
+            return _formElement.Text;
         }
 
         public string GetUrl() {
