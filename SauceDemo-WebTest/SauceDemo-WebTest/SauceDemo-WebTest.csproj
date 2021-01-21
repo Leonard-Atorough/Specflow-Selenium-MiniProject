@@ -5,6 +5,8 @@
     <RootNamespace>SauceDemo_WebTest</RootNamespace>
 
     <IsPackable>false</IsPackable>
+
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
