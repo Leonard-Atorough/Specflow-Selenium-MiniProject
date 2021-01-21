@@ -8,7 +8,7 @@ namespace SauceDemo_WebTest
         private IWebDriver _seleniumDriver;
         private string ProductPageURL = AppConfigReader.ProductPageUrl;
         private IWebElement _sortContainer => _seleniumDriver.FindElement(By.ClassName("product_sort_container"));
-        private IWebElement _firstItem => _seleniumDriver.FindElement(By.XPath(@""));
+        private IWebElement _firstItem => _seleniumDriver.FindElement(By.XPath(@"//*[@id='inventory_container']/div/div[1]/div[2]/a"));
 
         private IWebElement _cartIcon => _seleniumDriver.FindElement(By.ClassName("shopping_cart_link"));
 
