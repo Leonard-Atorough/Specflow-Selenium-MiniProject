@@ -72,9 +72,14 @@ namespace SauceDemo_WebTest
  
         public void AddItemToCart(int times)
         {
+            List<IWebElement> listButtons = new List<IWebElement>();
+            foreach (var item in _AddToCartButton)
+            {
+                listButtons.Add(item);
+            }
             for (int i = 0; i < times; i++)
             {
-                _AddToCartButton[i].Click();
+                listButtons[i].Click();
             }
         }
         public void ClickCartIcon() => _cartIcon.Click();

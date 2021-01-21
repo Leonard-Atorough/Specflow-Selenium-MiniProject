@@ -36,13 +36,13 @@ namespace SauceDemo_WebTest.BDD
         [Then(@"the first item should be in my cart")]
         public void ThenTheFirstItemShouldBeInMyCart()
         {
-            Assert.That(SD_Website.SD_Cartpage.GetAnyFirstItem, Does.Contain("Sauce Labs Backpack"));
+            Assert.That(SD_Website.SD_Cartpage.GetAnyFirstItem(), Does.Contain("Sauce Labs Backpack"));
         }
         
         [Then(@"the cart counter should display the correct (.*) of items")]
         public void ThenTheCartCounterShouldDisplayTheCorrectOfItems(string expected)
         {
-            Assert.That(SD_Website.SD_Cartpage.GetBasketCount, Is.EqualTo(Int32.Parse(expected)));
+            Assert.That(SD_Website.SD_Cartpage.GetBasketCount(), Is.EqualTo(Int32.Parse(expected)));
         }
 
 

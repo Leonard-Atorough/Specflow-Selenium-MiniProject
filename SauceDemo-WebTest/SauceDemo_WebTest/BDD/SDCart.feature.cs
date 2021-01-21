@@ -121,8 +121,7 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute(": Add multiple items to cart")]
-        [NUnit.Framework.TestCaseAttribute("2", null)]
-        [NUnit.Framework.TestCaseAttribute("1", null)]
+        [NUnit.Framework.TestCaseAttribute("6", null)]
         public virtual void AddMultipleItemsToCart(string number, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
