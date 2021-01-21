@@ -28,9 +28,9 @@ namespace SauceDemo_WebTest.BDD
         }
         
         [When(@"I add multiple (.*) of Items to my cart")]
-        public void WhenIAddMultipleOfItemsToMyCart(string p0)
+        public void WhenIAddMultipleOfItemsToMyCart(string items)
         {
-            ScenarioContext.Current.Pending();
+            SD_Website.SD_Productpage.AddItemToCart(Int32.Parse(items));
         }
         
         [Then(@"the first item should be in my cart")]
@@ -40,10 +40,11 @@ namespace SauceDemo_WebTest.BDD
         }
         
         [Then(@"the cart counter should display the correct (.*) of items")]
-        public void ThenTheCartCounterShouldDisplayTheCorrectOfItems(string p0)
+        public void ThenTheCartCounterShouldDisplayTheCorrectOfItems(string expected)
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(SD_Website.SD_Cartpage.GetBasketCount, Is.EqualTo(Int32.Parse(expected)));
         }
+
 
         [AfterScenario]
         public void Cleanup()
