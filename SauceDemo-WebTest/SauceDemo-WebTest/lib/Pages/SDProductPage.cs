@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System.Collections.Generic;
 
 namespace SauceDemo_WebTest
 {
@@ -9,6 +10,12 @@ namespace SauceDemo_WebTest
         private IWebElement _sortContainer => _seleniumDriver.FindElement(By.ClassName("product_sort_container"));
         private IWebElement _firstItem => _seleniumDriver.FindElement(By.XPath(@""));
 
+        private IWebElement _cartIcon => _seleniumDriver.FindElement(By.ClassName("shopping_cart_link"));
+
+        private IReadOnlyList<IWebElement> _AnyFirstItem => _seleniumDriver.FindElements(By.ClassName("inventory_item_name"));
+        private IReadOnlyList<IWebElement> _AddToCartButton => _seleniumDriver.FindElements(By.ClassName("btn_primary"));
+
+
         public SDProductPage(IWebDriver seleniumDriver)
         {
             _seleniumDriver = seleniumDriver;
@@ -16,7 +23,7 @@ namespace SauceDemo_WebTest
 
         public void VisitProductPage()
         {
-            _seleniumDriver.Navigate().GoToUrl(ProductPageURL);
+            _seleniumDriver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
         }
 
         public void SortByNameAZ()
@@ -29,9 +36,17 @@ namespace SauceDemo_WebTest
             return _firstItem.Text;
         }
 
-        public void AddItemToCart()
-        {
+        public string GetAnyFirstItem() => _AnyFirstItem[0].Text;
 
+        public void AddItemToCart() => _AddToCartButton[0].Click();
+ 
+        public void AddItemToCart(int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                _AddToCartButton[i].Click();
+            }
         }
+        public void ClickCartIcon() => _cartIcon.Click();
     }
 }
