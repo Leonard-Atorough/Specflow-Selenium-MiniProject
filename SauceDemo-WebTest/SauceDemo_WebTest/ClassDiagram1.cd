@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="SauceDemo_WebTest.SeleniumDriverConfig">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQIAAEAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>lib\Config\SeleniumDriverConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SauceDemo_WebTest.SDProductPage">
+    <Position X="3" Y="4" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AMCACAgEEAAEAAAAAAAAAAEAgQEkCAAAgAwAEAgEQAA=</HashCode>
+      <FileName>lib\Pages\SDProductPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SauceDemo_WebTest.SDSignInPage">
+    <Position X="0.5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAAAAAAgABAAAAAAAkAAAEAAIEiAIABAAQABA=</HashCode>
+      <FileName>lib\Pages\SDSignInPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SauceDemo_WebTest.SDWebsite">
+    <Position X="3.25" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAACAAAAAAgBAAAAAAABAAAI=</HashCode>
+      <FileName>lib\SDWebsite.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SD_Productpage" />
+      <Property Name="SD_SignInPage" />
+      <Property Name="SD_Cartpage" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SauceDemo_WebTest.SDCartPage">
+    <Position X="6.75" Y="4" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAACAQAAAIQAAAAkAwAEgAAACACAQAAAAQA=</HashCode>
+      <FileName>lib\Pages\SDCartPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SauceDemo_WebTest.BDD.SDCartSteps">
+    <Position X="10.75" Y="5.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>QgAEAAAAAAAAAABAAAAAAQIAAAIAACAAAAAAAEAIRAE=</HashCode>
+      <FileName>BDD\SDCartSteps.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="SD_Website" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SauceDemo_WebTest.SDProductSteps">
+    <Position X="16.75" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAhAAEAAAABAQAAgAAAAAAAARBAAEAAAAA=</HashCode>
+      <FileName>BDD\SDProductSteps.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SD_Website" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SauceDemo_WebTest.BDD.SDSignInSteps">
+    <Position X="12.25" Y="2.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAQACAAAAAIAAAAAAAAAIoAAAABIAAAACAAEAAgAA=</HashCode>
+      <FileName>BDD\SDSignInSteps.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SDWebsite" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
