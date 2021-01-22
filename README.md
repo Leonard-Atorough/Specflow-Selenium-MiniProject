@@ -16,7 +16,7 @@ Selenium is a portable framework that allows us to automate browsers, it is ofte
 
 ### Test Results
 
-[image]
+![](https://raw.githubusercontent.com/Leonard-Atorough/Specflow-Selenium-MiniProject/leonard/Images/Test%20explorer.PNG)
 
 ### Project Review
 
