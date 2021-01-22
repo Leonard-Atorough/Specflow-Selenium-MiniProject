@@ -8,7 +8,11 @@ Selenium is a portable framework that allows us to automate browsers, it is ofte
 
 ### Class Diagrams and Solution Layout
 
-[image]
+![](https://raw.githubusercontent.com/Leonard-Atorough/Specflow-Selenium-MiniProject/dev/Images/Class%20Diagram.PNG)
+
+![](https://raw.githubusercontent.com/Leonard-Atorough/Specflow-Selenium-MiniProject/dev/Images/Solution%20explorer.PNG)
+
+
 
 ### Test Results
 
